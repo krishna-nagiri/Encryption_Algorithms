@@ -1,0 +1,32 @@
+#Function to Encrypt plain Text.
+
+def ceaser_Encrypt(plaintext, shift): 
+  ciphertext = ""
+  for char in plaintext:
+      if char.isalpha():
+  # checks if the character is alphabet or not. if not then it won't be changed and the control will be shifted to line 13
+
+          shifted_base = ord('A') if char.isupper() else ord('a')
+
+  # checks if the Character is Capital or small letter, ex: char = A then ord('A')=65.
+
+          shifted_char = chr((ord(char) - shifted_base + shift) %26 + shifted_base)
+
+  # chr() returns the unicode of the input integer.
+
+          ciphertext += shifted_char
+      else :
+        ciphertext += char 
+  return ciphertext
+def ceaser_Decrypt(ciphertext, shift):
+    return ceaser_Encrypt(ciphertext, -shift)
+
+# # Display text
+
+plaintext = input("Enter the text to Encrypt: ")
+shift = int(input("Enter the shift value: "))
+ciphertext = ceaser_Encrypt(plaintext, shift)
+# TO ENCRYPT : 
+print("Encrypted : ", ciphertext)
+# To Decrypt
+print("Decrypted : ", ceaser_Decrypt(ciphertext, shift))
