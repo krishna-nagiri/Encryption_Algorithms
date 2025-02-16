@@ -4,7 +4,7 @@ def ceaser_Encrypt(plaintext, shift):
   ciphertext = ""
   for char in plaintext:
       if char.isalpha():
-  # checks if the character is alphabet or not. if not then it won't be changed and the control will be shifted to line 13
+  # checks if the character is alphabet or not. if not then it won't be changed and the control will be shifted to line 17
 
           shifted_base = ord('A') if char.isupper() else ord('a')
 
